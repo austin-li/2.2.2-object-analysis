@@ -38,8 +38,8 @@ for cont in contours:
 xcenter = (xmin + xmax)/2
 ycenter = (ymin + ymax)/2
 distance = (700 * 50)/(xmax - xmin)
-azimuth = np.arctan2(img_hsv.shape[0] - xcenter, 700)
-altitude = np.arctan2(img_hsv.shape[1] - ycenter, 700)
+azimuth = np.arctan2(xcenter - img_hsv.shape[0]/2, 700)
+altitude = np.arctan2(-(ycenter - img_hsv.shape[1]/2), 700)
 print(distance, azimuth, altitude)
 cv2.imshow("f", img)
 cv2.waitKey(0)
